@@ -16,8 +16,6 @@ class App {
             list2.add(str2.toLowerCase().charAt(x));
         }
 
-        ArrayList <Character> finalResult = new ArrayList <Character> ();
-
         for (int i = 0; i < list1.size(); i++){
             if (list2.contains(list1.get(i))){
                 list2.remove(list1.get(i));
