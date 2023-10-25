@@ -16,18 +16,18 @@ public class Cottage implements Home {
     }
 
     @Override
-    public int compareTo() {
-        if (getArea() < getArea()) {
+    public int compareTo(Home cottage2) {
+        if (cottage2.getArea() < getArea()) {
             return 1;
-        } else if (getArea() > getArea()) {
+        } else if (cottage2.getArea() > getArea()) {
             return -1;
-        } else if (getArea() == getArea()) {
+        } else {
             return 0;
-        } return 0;
+        }
     }
 
     public String toString() {
-        return floorCount + " этажный коттедж площадью " + getArea() + " метров";
+        return String.format("%d этажный коттедж площадью %s метров", floorCount, getArea());
     }
 }
 // END

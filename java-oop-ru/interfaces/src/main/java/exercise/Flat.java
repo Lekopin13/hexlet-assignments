@@ -13,7 +13,8 @@ public class Flat implements Home {
         this.floor = floor;
     }
 
-    public Flat(){}
+    public Flat() {
+    }
 
     @Override
     public double getArea() {
@@ -21,18 +22,19 @@ public class Flat implements Home {
     }
 
     @Override
-    public int compareTo() {
-        if (getArea() < getArea()) {
-            return 1;
-        } else if (getArea() > getArea()) {
-            return -1;
-        } else if (getArea() == getArea()) {
+    public int compareTo(Home another) {
+        if (this.getArea() == another.getArea()) {
             return 0;
-        } return 0;
+        }
+        if (this.getArea() > another.getArea()) {
+            return 1;
+        }
+        return -1;
     }
 
+
     public String toString() {
-        return "Квартира площадью " + getArea() + " метров на " + floor + " этаже";
+        return String.format("Квартира площадью %s метров на %d этаже", getArea(), floor);
     }
 }
 // END
