@@ -17,16 +17,15 @@ class Car {
     User owner;
 
     // BEGIN
-    public String serialize(Car car) throws JsonProcessingException {
+    public String serialize() throws JsonProcessingException {
         ObjectMapper mapper = new ObjectMapper();
-        String jsonBook = mapper.writeValueAsString(car);
+        String jsonBook = mapper.writeValueAsString(this);
         return jsonBook;
     }
 
     public static Car unserialize(String str) throws IOException {
         ObjectMapper mapper = new ObjectMapper();
-        Car car = mapper.readValue(str, Car.class);
-        return car;
+        return mapper.readValue(str, Car.class);
     }
     // END
 }
